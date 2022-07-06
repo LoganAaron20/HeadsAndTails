@@ -3,7 +3,9 @@ const CoinTossCounter = ({ loggedIn, results, setResults }) => {
     setResults([...results, value]);
   }
   const lis = results.map((result, index) => (
-    <li className="list-group-item" key={index}>{result === "H" ? "Heads" : "Tails"}</li>
+    <li className="list-group-item" key={index}>
+      {result === "H" ? "Heads" : "Tails"}
+    </li>
   ));
 
   const randomGenerator = () => {
@@ -13,14 +15,20 @@ const CoinTossCounter = ({ loggedIn, results, setResults }) => {
 
   return (
     loggedIn && (
-      <>
+      <div>
         <div className="text-center">
-        <button class="btn btn-outline-success" style={{marginBottom: "40px"}} onClick={() => updateResults(randomGenerator())}>Roll</button>
-          </div>
-          <div>
-        <ul className="list-group text-center">{lis}</ul>
+          <button
+            class="btn btn-outline-success"
+            style={{ marginBottom: "40px" }}
+            onClick={() => updateResults(randomGenerator())}
+          >
+            Roll
+          </button>
+        </div>
+        <div>
+          <ul className="list-group text-center">{lis}</ul>
+        </div>
       </div>
-      </>
     )
   );
 };
