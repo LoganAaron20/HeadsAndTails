@@ -1,2 +1,3 @@
 # HeadsAndTails
-Created with CodeSandbox
+## Basic Heads and Tails generator created with **React**
+
